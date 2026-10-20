@@ -1,0 +1,18 @@
+{
+  "name": "LITTOOL",
+  "id": "com.litt.littool.listing",
+  "url": "https://a2566564-del.github.io/LITTOOL/index.json",
+  "author": {
+    "name": "LITTOOL",
+    "url": "https://github.com/a2566564-del/LITTOOL"
+  },
+  "description": "VRChat 아바타 제작 도구 LITTOOL (마테리얼 일괄 적용 · 본 스케일 · 오류 찾기) / Material Batch, Bone Scale and Error Finder for VRChat avatars",
+  "infoLink": {
+    "text": "설치·사용법 / How to use",
+    "url": "https://github.com/a2566564-del/LITTOOL/blob/main/Packages/com.litt.littool/README.md"
+  },
+  "bannerUrl": "banner.png",
+  "githubRepos": [
+    "a2566564-del/LITTOOL"
+  ]
+}

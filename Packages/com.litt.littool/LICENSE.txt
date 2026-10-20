@@ -1,0 +1,53 @@
+LITTOOL
+Copyright (c) 2026 LITTOOL. All rights reserved.
+
+[한국어]
+이 소프트웨어는 제작자와, 제작자가 쓰도록 알려 준 사람(제작자에게 파일을 받았거나, 제작자가 알려 준 VCC 저장소로 설치한 사람)이
+개인적으로 쓰는 것만 허락합니다.
+제작자의 허락 없이 다시 배포하거나, 판매하거나, 다른 곳에 다시 올리거나, 고친 것을 배포할 수 없습니다.
+소스 코드가 공개 저장소에 있어도 이 조건은 같습니다.
+이 소프트웨어는 있는 그대로 제공되며 어떤 보증도 하지 않습니다. 사용하다 생긴 손해에 제작자는 책임지지 않습니다.
+
+[English]
+Use is permitted only to the author and to the people the author shares this software with (who received it from
+the author, or installed it from the VCC listing the author told them about), for their personal use.
+Without the author's permission you may not redistribute, sell or re-upload this software, or distribute modified
+versions of it. These terms apply even though the source code is in a public repository.
+The software is provided "as is", without warranty of any kind. The author is not liable for any damage arising from its use.
+
+[日本語]
+このソフトウェアは、制作者と、制作者が使ってよいと伝えた人(制作者からファイルを受け取った人、または制作者が教えたVCCリポジトリから
+インストールした人)が個人的に使うことだけを許可します。
+制作者の許可なく再配布・販売・他の場所への再アップロード、または改変版の配布はできません。
+ソースコードが公開リポジトリにあっても、この条件は変わりません。
+このソフトウェアは現状のまま提供され、いかなる保証もありません。使用によって生じた損害について制作者は責任を負いません。
+
+--------------------------------------------------------------------------------
+Third-party notices
+
+lilToon section names (Editor/MaterialBatch/LilToonCatalog.Data.cs) and preset
+category names (Editor/MaterialBatch/LilToonPresets.cs) come from lilToon's
+translation files.
+lilToon - Copyright (c) 2020-present lilxyzw - MIT License - https://github.com/lilxyzw/lilToon
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+The title image (Editor/Images/LITTOOL_Banner.png) was rendered with:
+- Yellowtail - Apache License 2.0
+- Source Sans 3 - SIL Open Font License 1.1

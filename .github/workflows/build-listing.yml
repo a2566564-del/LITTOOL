@@ -4,6 +4,8 @@ env:
   listPublishDirectory: Website
   pathToCi: ci
   
+# The VCC listing (index.json and the page at https://a2566564-del.github.io/LITTOOL/) is made from source.json and
+# the .zip assets of every release, then published with GitHub Pages (Settings > Pages > Source: GitHub Actions).
 on: 
   workflow_dispatch:
   workflow_run:
@@ -57,8 +59,11 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/global.json', '**/*.csproj') }}
       
       # Build Package Version Listing with Nuke
+      # --current-listing-url: package-list-action leaves out every release that the listing at that address already
+      # has, so a run without a new release would publish an empty listing. A file that does not exist makes every run
+      # list all releases again ("Could not download manifest from .../no-listing.json" in the log is expected).
       - name: Build Package Version Listing
-        run: ${{ env.pathToCi }}/build.cmd BuildRepoListing --root ${{ env.pathToCi }} --list-publish-directory $GITHUB_WORKSPACE/${{ env.listPublishDirectory }} --current-package-name ${{ vars.PACKAGE_NAME }}
+        run: ${{ env.pathToCi }}/build.cmd BuildRepoListing --root ${{ env.pathToCi }} --list-publish-directory $GITHUB_WORKSPACE/${{ env.listPublishDirectory }} --current-package-name com.litt.littool --current-listing-url https://a2566564-del.github.io/LITTOOL/no-listing.json
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
