@@ -113,7 +113,9 @@ namespace Littool.ErrorFinder
             if (c.NearestNo > 0 && c.NearestPercent >= 0)
             {
                 string what = string.Empty;
-                if (data?.rows != null && c.NearestNo <= data.rows.Length) what = data.rows[c.NearestNo - 1].what;
+                // by number: rows taken out of the list leave gaps, so a number is not a position
+                var nearest = data?.rows != null ? System.Array.Find(data.rows, r => r != null && r.no == c.NearestNo) : null;
+                if (nearest != null) what = nearest.what;
                 sb.Append("가장 가까운 목록 오류: #").Append(c.NearestNo).Append(' ').Append(c.NearestPercent).Append("% — ").Append(what).Append(nl);
             }
             else if (c.Match == CardMatch.Similar && c.Row != null)

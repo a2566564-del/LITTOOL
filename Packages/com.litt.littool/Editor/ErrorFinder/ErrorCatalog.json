@@ -1,6 +1,6 @@
 {
- "version": "v7.1",
- "date": "2026-10-19",
+ "version": "v7.2",
+ "date": "2026-10-21",
  "threshold": 0.65,
  "minSimLen": 30,
  "cjkWeight": 2,
@@ -18,7 +18,7 @@
    "fix": "① 아바타 루트의 Pipeline Manager에서 [Detach]로 ID 비우기 → 다시 Build & Publish(새 아바타로 등록)\n② 기존 아바타를 덮어써야 하면 그 아바타를 올린 계정으로 로그인",
    "auto": "툴로 수정 가능",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3218\nhttps://vrcfury.com/troubleshooting",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3218\nhttps://vrcfury.com/troubleshooting",
    "result": "아니오",
    "kw": "belongs to a different user",
    "keywords": [
@@ -52,30 +52,6 @@
    "codeIsKeyword": false,
    "matchMode": "normal",
    "note": "v3 수정: 서버 장애 원인을 먼저 안내(1회차 R056 오안내)"
-  },
-  {
-   "no": 3,
-   "group": 1,
-   "groupName": "블루프린트 ID",
-   "sev": "업로드 차단",
-   "when": "SDK 업로드",
-   "where": "콘솔·팝업",
-   "msg": "Only the blueprint's author can update this blueprint.",
-   "what": "남의 블루프린트(아바타)를 덮어쓰려 할 때 서버가 돌려주는 메시지",
-   "cause": "다른 사람 ID가 남은 프리팹·씬",
-   "fix": "Pipeline Manager [Detach] 후 새로 업로드, 또는 원래 업로드한 계정으로 로그인",
-   "auto": "툴로 수정 가능",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCCore-Editor.dll 문자열",
-   "result": "아니오",
-   "kw": "Only the blueprint's author",
-   "keywords": [
-    "Only the blueprint's author"
-   ],
-   "maCodes": [],
-   "codeIsKeyword": false,
-   "matchMode": "normal",
-   "note": "v2"
   },
   {
    "no": 4,
@@ -114,7 +90,7 @@
    "fix": "콘솔의 다른 빨간 오류부터 해결 → SDK 패널에서 다시 Build & Publish(ID 자동 발급)",
    "auto": "안내만",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3247",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3247",
    "result": "예",
    "kw": "does not have a blueprint id assigned",
    "keywords": [
@@ -138,7 +114,7 @@
    "fix": "씬에서 업로드할 아바타 하나만 켜기 → Pipeline Manager ID 확인(덮어쓸 아바타 ID로 맞추거나 Detach) → 다시 업로드",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3252",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3252",
    "result": "아니오",
    "kw": "doesn't match the API id",
    "keywords": [
@@ -162,35 +138,11 @@
    "fix": "SDK 패널에서 직접 업로드 / 일괄 업로더 같은 외부 툴은 최신으로 업데이트",
    "auto": "안내만",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3206\nhttps://creators.vrchat.com/releases/release-3-9-0",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3206\nhttps://creators.vrchat.com/releases/release-3-9-0",
    "result": "아니오",
    "kw": "Avatar info does not contain an ID",
    "keywords": [
     "Avatar info does not contain an ID"
-   ],
-   "maCodes": [],
-   "codeIsKeyword": false,
-   "matchMode": "normal",
-   "note": "v2"
-  },
-  {
-   "no": 8,
-   "group": 1,
-   "groupName": "블루프린트 ID",
-   "sev": "업로드 차단",
-   "when": "SDK 빌드",
-   "where": "콘솔",
-   "msg": "You must assign an ID to the avatar before building a bundle.",
-   "what": "ID 없이 번들 빌드를 시도함",
-   "cause": "외부 툴이 예전 빌드 API를 호출",
-   "fix": "SDK 패널의 Build & Publish 사용 / 해당 툴 업데이트",
-   "auto": "안내만",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDK3A-Editor.dll 문자열",
-   "result": "아니오",
-   "kw": "You must assign an ID to the avatar",
-   "keywords": [
-    "You must assign an ID to the avatar"
    ],
    "maCodes": [],
    "codeIsKeyword": false,
@@ -210,7 +162,7 @@
    "fix": "삭제한 아바타였다면 Detach 후 새로 업로드 / VPN 끄고 네트워크 확인 후 재시도 / 서버 오류면 VRChat 서버 상태(status.vrchat.com)를 확인하고 나중에 다시",
    "auto": "안내만",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3225–3233",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3225–3233",
    "result": "감쌈",
    "kw": "Failed to load avatar data",
    "keywords": [
@@ -234,7 +186,7 @@
    "fix": "SDK에 다시 로그인하고 네트워크 확인 후 재시도. 업로드 권한이 없는 계정(신뢰 등급 Visitor, Steam·Oculus 계정으로 로그인)이면 VRChat 웹사이트 계정으로 로그인하고 게임을 플레이해 New User 등급 달성",
    "auto": "안내만",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3813",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3813",
    "result": "아니오",
    "kw": "Failed to reserve an avatar ID",
    "keywords": [
@@ -282,7 +234,7 @@
    "fix": "VRChat 웹사이트 계정으로 로그인 → 게임을 플레이해 New User 등급 달성. SDK 3.9.0 이후 Visitor도 Build & Test(로컬 테스트)는 가능. 전에 업로드해 본 계정인데 갑자기 뜨면 서버 문제일 수 있으니 status.vrchat.com 확인 뒤 나중에 다시",
    "auto": "안내만",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3413\nhttps://help.vrchat.com/hc/en-us/articles/360062658813-Why-can-t-I-upload-avatars-or-worlds-yet",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3413\nhttps://help.vrchat.com/hc/en-us/articles/360062658813-Why-can-t-I-upload-avatars-or-worlds-yet",
    "result": "아니오",
    "kw": "does not have permissions to build and upload | spend more time enjoying the app",
    "keywords": [
@@ -293,30 +245,6 @@
    "codeIsKeyword": false,
    "matchMode": "normal",
    "note": "v3 수정: 업로드 화면 문구 추가(1회차 R057)"
-  },
-  {
-   "no": 13,
-   "group": 2,
-   "groupName": "로그인·업로드 권한",
-   "sev": "업로드 차단",
-   "when": "SDK 패널",
-   "where": "콘솔·SDK 패널",
-   "msg": "Please use the \"VRChat SDK/Settings\" window to log in.",
-   "what": "SDK에 로그인되어 있지 않음",
-   "cause": "로그인 안 함 / 세션 만료",
-   "fix": "VRChat SDK > Show Control Panel > Authentication에서 로그인(2단계 인증 포함)",
-   "auto": "안내만",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDKBase-Editor.dll 문자열",
-   "result": "아니오",
-   "kw": "window to log in",
-   "keywords": [
-    "window to log in"
-   ],
-   "maCodes": [],
-   "codeIsKeyword": false,
-   "matchMode": "normal",
-   "note": "v2"
   },
   {
    "no": 14,
@@ -355,7 +283,7 @@
    "fix": "텍스처 Max Size 낮추기·Crunch 압축, 안 쓰는 메쉬·의상 삭제, AAO 같은 최적화 툴 사용. Build & Test에는 한도가 적용되지 않음",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3179\nhttps://creators.vrchat.com/avatars/avatar-size-limits",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3179\nhttps://creators.vrchat.com/avatars/avatar-size-limits",
    "result": "아니오",
    "kw": "download size is too large",
    "keywords": [
@@ -379,7 +307,7 @@
    "fix": "텍스처 해상도 낮추기, 안 쓰는 메쉬·블렌드셰이프 제거, 최적화 툴 사용",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3186\nhttps://creators.vrchat.com/avatars/avatar-size-limits",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3186\nhttps://creators.vrchat.com/avatars/avatar-size-limits",
    "result": "아니오",
    "kw": "uncompressed size is too large",
    "keywords": [
@@ -475,7 +403,7 @@
    "fix": "콘솔을 위로 올려 첫 빌드 오류(컴파일, 전처리 콜백 등)부터 해결",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L3170",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L3170",
    "result": "예",
    "kw": "Failed to find the built avatar bundle",
    "keywords": [
@@ -498,8 +426,8 @@
    "cause": "컴파일 오류, 툴 전처리 실패, 검사 실패 등",
    "fix": "콘솔에서 이 줄보다 위에 있는 첫 빨간 오류 찾기",
    "auto": "툴로 위치 안내",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDK3A-Editor.dll 문자열",
+   "basis": "커뮤니티",
+   "source": "https://ask.vrchat.com/t/cant-build-avatar/47140\nhttps://ask.vrchat.com/t/no-idea-what-to-do-build-keeps-failing/46729\nhttps://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12315454802",
    "result": "예",
    "kw": "Failed to build the Avatar | AssetBundle was not built",
    "keywords": [
@@ -509,7 +437,7 @@
    "maCodes": [],
    "codeIsKeyword": false,
    "matchMode": "normal",
-   "note": "v3 수정: 결과 메시지 ‘AssetBundle was not built’ 추가(1회차 R059)"
+   "note": "v3 수정: 결과 메시지 ‘AssetBundle was not built’ 추가(1회차 R059)\nv7.2 수정: 출처를 같은 문장이 보이는 공개 글로 바꿈(라이선스 정리)"
   },
   {
    "no": 22,
@@ -624,7 +552,7 @@
    "fix": "SDK 패널에서 아바타 이름 입력",
    "auto": "안내만",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L2242",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L2242",
    "result": "아니오",
    "kw": "Name cannot be empty",
    "keywords": [
@@ -647,8 +575,8 @@
    "cause": "콜백 이름으로 툴을 알 수 있음: BuildFrameworkPreprocessHook·BuildFrameworkOptimizeHook = NDMF(MA·AAO 등), VrcfAvatarPreprocessor·VrcPreuploadHook… = VRCFury, AvatarBuildHook = d4rk Avatar Optimizer, LockMaterialsOnUpload = Thry Editor(Poiyomi 머티리얼 잠금)",
    "fix": "이 팝업 직전에 뜬 팝업·콘솔 오류(NDMF 기반 툴이면 NDMF Console)가 진짜 원인 → 그 오류의 카드를 따르기. 앞선 오류가 없으면 콜백 이름의 툴을 VCC에서 최신으로",
    "auto": "툴로 위치 안내",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDKBase-Editor.dll 문자열\nhttps://vrcfury.com/common-questions\nhttps://ask.vrchat.com/t/preprocess-callback-failed-error-on-unity-3d/41175",
+   "basis": "커뮤니티",
+   "source": "https://ask.vrchat.com/t/preprocess-callback-failed-error-on-unity-3d/41175\nhttps://ask.vrchat.com/t/help-callback-failed/44338\nhttps://vrcfury.com/common-questions",
    "result": "예",
    "kw": "reported a failure",
    "keywords": [
@@ -657,7 +585,7 @@
    "maCodes": [],
    "codeIsKeyword": false,
    "matchMode": "normal",
-   "note": "v3 수정: 콜백 표를 ‘위치 규칙’ 시트로 옮기고 Thry·lilToon·lilycalInventory·VRCQuestTools 추가(1회차 R016)\nv7 수정: ‘위치 규칙 시트’·‘14~16번’ 대신 할 일을 직접"
+   "note": "v3 수정: 콜백 표를 ‘위치 규칙’ 시트로 옮기고 Thry·lilToon·lilycalInventory·VRCQuestTools 추가(1회차 R016)\nv7 수정: ‘위치 규칙 시트’·‘14~16번’ 대신 할 일을 직접\nv7.2 수정: 출처를 같은 문장이 보이는 공개 글로 바꿈(라이선스 정리)"
   },
   {
    "no": 28,
@@ -666,47 +594,22 @@
    "sev": "업로드 차단",
    "when": "SDK 빌드",
    "where": "콘솔",
-   "msg": "Exception in VRCSDKPreprocessAvatarCallback Callback\n('{콜백 이름}' threw an exception.)",
+   "msg": "The VRCSDK build was aborted because the VRCSDKPreprocessAvatarCallback '{콜백 이름}' threw an exception. Check the log for details.",
    "what": "전처리 툴 내부에서 예외 발생",
    "cause": "툴 버그, 툴끼리 버전 불일치, 아바타 구성 문제",
    "fix": "바로 위 예외(…Exception)가 진짜 원인 — 스택트레이스의 Packages/<패키지> 경로나 네임스페이스로 툴을 알 수 있음 → 그 툴을 VCC에서 최신으로",
    "auto": "툴로 위치 안내",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDKBase-Editor.dll 문자열",
+   "basis": "커뮤니티",
+   "source": "https://x.com/No1zy_ttv/status/1846610716582883800",
    "result": "예",
-   "kw": "Exception in VRCSDKPreprocessAvatarCallback | VRCSDKPreprocessAvatarCallback '*' threw an exception",
+   "kw": "VRCSDKPreprocessAvatarCallback '*' threw an exception",
    "keywords": [
-    "Exception in VRCSDKPreprocessAvatarCallback",
     "VRCSDKPreprocessAvatarCallback '*' threw an exception"
    ],
    "maCodes": [],
    "codeIsKeyword": false,
    "matchMode": "normal",
-   "note": "v3 수정: 제작자 제보 안내 빼기\nv5 수정: ‘threw an exception’만으로는 Unity 초기화 예외에도 걸려서 콜백 이름이 붙은 문장으로 좁힘(3회차 T07)\nv7 수정: ‘위치 규칙 시트’ 대신 할 일을 직접"
-  },
-  {
-   "no": 29,
-   "group": 4,
-   "groupName": "빌드 중단(전처리 콜백)",
-   "sev": "업로드 차단",
-   "when": "SDK 빌드 시작",
-   "where": "팝업·콘솔",
-   "msg": "The VRCSDK build was aborted due to an exception in the '{콜백 이름}' VRCSDKBuildRequestedCallback. Check the log for details.",
-   "what": "빌드 요청 단계에서 툴이 예외를 냄",
-   "cause": "툴 버그·버전 불일치",
-   "fix": "위쪽 예외 로그로 툴 확인 → 업데이트 또는 제거",
-   "auto": "툴로 위치 안내",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDKBase-Editor.dll 문자열",
-   "result": "예",
-   "kw": "aborted due to an exception in the * VRCSDKBuildRequestedCallback",
-   "keywords": [
-    "aborted due to an exception in the * VRCSDKBuildRequestedCallback"
-   ],
-   "maCodes": [],
-   "codeIsKeyword": false,
-   "matchMode": "normal",
-   "note": "v7 수정: 콜백 이름(VRCSDKBuildRequestedCallback)만으로는 ‘툴이 일부러 막음’(30번) 문장도 이 행으로 감 → ‘예외로 중단’ 문장으로"
+   "note": "v3 수정: 제작자 제보 안내 빼기\nv5 수정: ‘threw an exception’만으로는 Unity 초기화 예외에도 걸려서 콜백 이름이 붙은 문장으로 좁힘(3회차 T07)\nv7 수정: ‘위치 규칙 시트’ 대신 할 일을 직접\nv7.2 수정: 출처를 같은 문장이 보이는 공개 글로 바꿈(라이선스 정리) · 공개 글에 없는 팝업 제목 문구(Exception in … Callback)는 뺌"
   },
   {
    "no": 30,
@@ -721,7 +624,7 @@
    "fix": "콜백 이름으로 빌드를 막은 툴을 알 수 있음 → 그 툴이 띄운 창이나 콘솔에 남긴 이유(설정 누락 등)를 찾아 그대로 고치고 다시 빌드",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L2936 · VRCSDKBase-Editor.dll 문자열",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L2936\nhttps://knb-mayumi.com/vrc-world-err/",
    "result": "예",
    "kw": "Build was blocked by the SDK callback | build was aborted at the request of",
    "keywords": [
@@ -731,7 +634,7 @@
    "maCodes": [],
    "codeIsKeyword": false,
    "matchMode": "normal",
-   "note": "v7 수정: 29번 키워드(VRCSDKBuildRequestedCallback)가 이 문장도 잡아 ‘예외’ 카드로 가던 것 — 키워드를 더 길게(자기 문장 시험)"
+   "note": "v7 수정: 29번 키워드(VRCSDKBuildRequestedCallback)가 이 문장도 잡아 ‘예외’ 카드로 가던 것 — 키워드를 더 길게(자기 문장 시험)\nv7.2 수정: 출처를 같은 문장이 보이는 공개 글로 바꿈(라이선스 정리)"
   },
   {
    "no": 31,
@@ -972,30 +875,6 @@
    "note": "v2"
   },
   {
-   "no": 41,
-   "group": 5,
-   "groupName": "컴파일 에러",
-   "sev": "업로드 차단",
-   "when": "SDK 패널",
-   "where": "콘솔",
-   "msg": "Can't find Avatars SDK, make sure you have it installed!",
-   "what": "Avatars SDK 패키지를 찾지 못함",
-   "cause": "Base만 설치됨, Avatars 패키지 손상·누락",
-   "fix": "VCC에서 VRChat SDK - Avatars 설치 또는 Reinstall",
-   "auto": "안내만",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDKBase-Editor.dll 문자열",
-   "result": "아니오",
-   "kw": "Can't find Avatars SDK",
-   "keywords": [
-    "Can't find Avatars SDK"
-   ],
-   "maCodes": [],
-   "codeIsKeyword": false,
-   "matchMode": "normal",
-   "note": "v2"
-  },
-  {
    "no": 42,
    "group": 6,
    "groupName": "중복 설치·DLL 충돌",
@@ -1224,7 +1103,7 @@
    "fix": "아바타 오브젝트 켜기 / 아바타 루트에 VRC Avatar Descriptor 추가",
    "auto": "툴로 수정 가능",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1400",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1400",
    "result": "아니오",
    "kw": "VRCAvatarDescriptor is required",
    "keywords": [
@@ -1248,7 +1127,7 @@
    "fix": "아바타 루트에 Animator 추가하고 Avatar(Humanoid) 지정. Avatar Descriptor는 Animator가 있는 오브젝트(모델의 루트)에 붙어 있어야 함 — 다른 오브젝트에 붙였으면 옮기기",
    "auto": "툴로 수정 가능",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L351",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L351",
    "result": "아니오",
    "kw": "does not contain an Animator",
    "keywords": [
@@ -1257,7 +1136,7 @@
    "maCodes": [],
    "codeIsKeyword": false,
    "matchMode": "normal",
-   "note": "v7 수정: 원인 ‘루트를 잘못 잡음’에 맞는 해결 추가(SDK 3.10.5 AvatarBuilder.cs L349: Descriptor가 붙은 오브젝트의 Animator를 검사) — 원인마다 해결이 있는지 점검"
+   "note": "v7 수정: 원인 ‘루트를 잘못 잡음’에 맞는 해결 추가(SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L349: Descriptor가 붙은 오브젝트의 Animator를 검사) — 원인마다 해결이 있는지 점검"
   },
   {
    "no": 53,
@@ -1272,7 +1151,7 @@
    "fix": "아바타와 부모 오브젝트 켜기",
    "auto": "툴로 수정 가능",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L370",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L370",
    "result": "아니오",
    "kw": "disabled in the scene hierarchy",
    "keywords": [
@@ -1296,7 +1175,7 @@
    "fix": "Auto Fix",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L496",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L496",
    "result": "아니오",
    "kw": "no pipeline manager component",
    "keywords": [
@@ -1320,7 +1199,7 @@
    "fix": "Auto Fix, 또는 의상 쪽 Pipeline Manager·Descriptor 삭제",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L456",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L456",
    "result": "아니오",
    "kw": "multiple pipeline manager components",
    "keywords": [
@@ -1344,7 +1223,7 @@
    "fix": "FBX 선택 > Rig > Configure에서 Head·Hand·Foot·UpperArm 지정 후 Apply",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L4221 · L380 · L398",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L4221 · L380 · L398",
    "result": "아니오",
    "kw": "bones mapped | its feet aren't specified | its upper arms aren't specified",
    "keywords": [
@@ -1370,7 +1249,7 @@
    "fix": "Rig > Configure에서 메시지에 나온 본 지정",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L4252",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L4252",
    "result": "아니오",
    "kw": "Spine hierarchy missing elements",
    "keywords": [
@@ -1394,7 +1273,7 @@
    "fix": "Rig 매핑 수정(Chest·UpperChest 다시 지정) 또는 본 계층 원래대로",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L4265",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L4265",
    "result": "아니오",
    "kw": "Spine hierarchy incorrect",
    "keywords": [
@@ -1418,7 +1297,7 @@
    "fix": "Auto Fix 또는 Armature를 루트 바로 아래로 이동",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L577",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L577",
    "result": "아니오",
    "kw": "armature is not a direct child",
    "keywords": [
@@ -1442,7 +1321,7 @@
    "fix": "루트 스케일과 FBX Scale Factor 확인",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L404",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L404",
    "result": "아니오",
    "kw": "avatar is too short",
    "keywords": [
@@ -1466,7 +1345,7 @@
    "fix": "Descriptor > LipSync > Face Mesh에 얼굴(Body) 메쉬 지정 또는 Auto Detect",
    "auto": "툴로 수정 가능",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L339",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L339",
    "result": "아니오",
    "kw": "Face Mesh is not specified",
    "keywords": [
@@ -1490,7 +1369,7 @@
    "fix": "첫 레이어 Mask에 vrc_HandsOnly 지정(Packages/com.vrchat.avatars/Samples/AV3 Demo Assets/Animation/Masks)",
    "auto": "툴로 수정 가능",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L667\nhttps://ask.vrchat.com/t/the-vrcsdk-build-was-aborted-failure-error/48550",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L667\nhttps://ask.vrchat.com/t/the-vrcsdk-build-was-aborted-failure-error/48550",
    "result": "아니오",
    "kw": "Gesture Layer needs valid mask",
    "keywords": [
@@ -1514,7 +1393,7 @@
    "fix": "필요 없는 파라미터 삭제, Synced 해제(로컬 전용), Int·Float→Bool, VRCFury 파라미터 압축 활용",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L821",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L821",
    "result": "아니오",
    "kw": "too many parameters defined",
    "keywords": [
@@ -1538,7 +1417,7 @@
    "fix": "Expression Parameters에 같은 이름·타입으로 추가하거나 메뉴 수정",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L877",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L877",
    "result": "아니오",
    "kw": "uses a parameter that is not defined",
    "keywords": [
@@ -1562,7 +1441,7 @@
    "fix": "해당 컨트롤에 Float(또는 Int) 파라미터 지정",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L907",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L907",
    "result": "아니오",
    "kw": "invalid parameter for a control",
    "keywords": [
@@ -1586,7 +1465,7 @@
    "fix": "메뉴·파라미터 에셋 지정 또는 Customize 끄기",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L809 · L814",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L809 · L814",
    "result": "아니오",
    "kw": "object reference is missing",
    "keywords": [
@@ -1610,7 +1489,7 @@
    "fix": "Auto Fix(256px·압축 적용)",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L790",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L790",
    "result": "아니오",
    "kw": "Images used for Actions & Moods",
    "keywords": [
@@ -1634,7 +1513,7 @@
    "fix": "Auto Fix(해당 텍스처의 Streaming Mip Maps 켜기)",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L4123\nhttps://ask.vrchat.com/t/streaming-mipmaps-issue/22824",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L4123\nhttps://ask.vrchat.com/t/streaming-mipmaps-issue/22824",
    "result": "아니오",
    "kw": "Streaming Mip Maps",
    "keywords": [
@@ -1658,7 +1537,7 @@
    "fix": "텍스처 임포트 설정에서 Max Size를 8192 이하로",
    "auto": "툴로 수정 가능",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L4150",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L4150",
    "result": "아니오",
    "kw": "textures bigger than",
    "keywords": [
@@ -1682,7 +1561,7 @@
    "fix": "Auto Fix(Read/Write 켜기)",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L4517",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L4517",
    "result": "아니오",
    "kw": "Read/Write disabled",
    "keywords": [
@@ -1706,7 +1585,7 @@
    "fix": "Auto Fix(Legacy Blendshape Normals 켜기). 대안: Blend Shape Normals를 None/Import로",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L4418\nhttps://feedback.vrchat.com/sdk-bug-reports/p/dont-use-legacyblendshapenormals-when-autofixing-with-blendshapenormals-warning",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L4418\nhttps://feedback.vrchat.com/sdk-bug-reports/p/dont-use-legacyblendshapenormals-when-autofixing-with-blendshapenormals-warning",
    "result": "아니오",
    "kw": "Legacy Blendshape Normals",
    "keywords": [
@@ -1730,7 +1609,7 @@
    "fix": "Auto Fix",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1077",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1077",
    "result": "아니오",
    "kw": "Found an audio clip with load type",
    "keywords": [
@@ -1754,7 +1633,7 @@
    "fix": "Auto Fix",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1085",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1085",
    "result": "아니오",
    "kw": "used in state behaviours",
    "keywords": [
@@ -1778,7 +1657,7 @@
    "fix": "Auto Fix로 제거. 기능이 필요하면 허용 컴포넌트로 대체",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1053\nhttps://creators.vrchat.com/avatars/whitelisted-avatar-components/whitelisted-avatar-components",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1053\nhttps://creators.vrchat.com/avatars/whitelisted-avatar-components/whitelisted-avatar-components",
    "result": "아니오",
    "kw": "will be removed by the client",
    "keywords": [
@@ -1802,7 +1681,7 @@
    "fix": "Auto Fix(PhysBone으로 변환)",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L938",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L938",
    "result": "아니오",
    "kw": "depreciated DynamicBone",
    "keywords": [
@@ -1826,7 +1705,7 @@
    "fix": "Auto Fix(Stop Action 변경)",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1113",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1113",
    "result": "아니오",
    "kw": "destroy themselves when they stop",
    "keywords": [
@@ -1850,7 +1729,7 @@
    "fix": "Auto Fix(Stop Action = None)",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1129",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1129",
    "result": "아니오",
    "kw": "disable itself when it stops",
    "keywords": [
@@ -1874,7 +1753,7 @@
    "fix": "Auto Fix(Autodestruct 끄기)",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1143",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1143",
    "result": "아니오",
    "kw": "auto-destruct when the trail ends",
    "keywords": [
@@ -1898,7 +1777,7 @@
    "fix": "Auto Fix(보호 레이어와의 충돌 끄기 또는 힘 0 중 선택)",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1156",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1156",
    "result": "아니오",
    "kw": "apply collision forces",
    "keywords": [
@@ -1922,7 +1801,7 @@
    "fix": "콘솔의 상세 목록을 보고 PhysBone 제거·이동",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1229",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1229",
    "result": "아니오",
    "kw": "maximum dependency depth",
    "keywords": [
@@ -1946,7 +1825,7 @@
    "fix": "필요 없는 콜라이더의 Global Collision을 False로",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L987",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L987",
    "result": "아니오",
    "kw": "global PhysBone colliders",
    "keywords": [
@@ -1970,7 +1849,7 @@
    "fix": "메시지의 개수만큼 Head Chop 제거·통합",
    "auto": "툴로 위치 안내",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L423",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L423",
    "result": "아니오",
    "kw": "too many VRCHeadChop",
    "keywords": [
@@ -1994,7 +1873,7 @@
    "fix": "Quest용 머티리얼을 복제해 VRChat/Mobile 셰이더(Toon Lit, Standard Lite 등)로 변경",
    "auto": "툴로 수정 가능",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1200\nhttps://ask.vrchat.com/t/avatar-validation-failed/25422",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1200\nhttps://ask.vrchat.com/t/avatar-validation-failed/25422",
    "result": "아니오",
    "kw": "unsupported shader",
    "keywords": [
@@ -2018,7 +1897,7 @@
    "fix": "Auto Fix(VRC Constraint로 변환·애니메이션 재연결)",
    "auto": "SDK Auto Fix",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1007",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1007",
    "result": "아니오",
    "kw": "Unity constraints are not allowed",
    "keywords": [
@@ -4974,30 +4853,6 @@
    "note": "v2"
   },
   {
-   "no": 205,
-   "group": 21,
-   "groupName": "Build & Test",
-   "sev": "플레이 차단",
-   "when": "Build & Test(PC)",
-   "where": "콘솔",
-   "msg": "Could not find the VRChat test avatar directory.",
-   "what": "로컬 테스트용 VRChat 폴더를 찾지 못함",
-   "cause": "VRChat 미설치, 한 번도 실행 안 함, 클라이언트 경로 미설정",
-   "fix": "VRChat을 한 번 실행하고, SDK 설정의 VRChat 클라이언트 경로 확인",
-   "auto": "안내만",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDK3A-Editor.dll 문자열",
-   "result": "아니오",
-   "kw": "Could not find the VRChat test avatar directory",
-   "keywords": [
-    "Could not find the VRChat test avatar directory"
-   ],
-   "maCodes": [],
-   "codeIsKeyword": false,
-   "matchMode": "normal",
-   "note": "v2"
-  },
-  {
    "no": 206,
    "group": 21,
    "groupName": "Build & Test",
@@ -5009,8 +4864,8 @@
    "cause": "콜론 뒤에 SDK가 붙인 이유가 실제 원인",
    "fix": "콜론 뒤의 이유 문장을 확인 — 그 문장이 오류 목록에 있으면 그 카드가 대신 나옴. 없으면 VRChat 클라이언트 설치·경로(SDK 설정)와 빌드 대상 플랫폼부터 확인",
    "auto": "안내만",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDK3A-Editor.dll 문자열",
+   "basis": "커뮤니티",
+   "source": "https://ask.vrchat.com/t/cannot-test-for-android-quest-will-not-let-me-select-both-platforms-and-when-building-for-android-i-get-an-error/46964",
    "result": "감쌈",
    "kw": "Unable to test avatar",
    "keywords": [
@@ -5019,7 +4874,7 @@
    "maCodes": [],
    "codeIsKeyword": false,
    "matchMode": "normal",
-   "note": "v7 수정: ‘이유에 따라 조치’만 있던 것 — 감싼 메시지로 표시(안쪽 문장 먼저)"
+   "note": "v7 수정: ‘이유에 따라 조치’만 있던 것 — 감싼 메시지로 표시(안쪽 문장 먼저)\nv7.2 수정: 출처를 같은 문장이 보이는 공개 글로 바꿈(라이선스 정리)"
   },
   {
    "no": 207,
@@ -5034,7 +4889,7 @@
    "fix": "SDK 패널에서 Windows 또는 Android로 전환",
    "auto": "안내만",
    "basis": "소스 확인",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L2989",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L2989",
    "result": "아니오",
    "kw": "Avatar testing is not supported on platform",
    "keywords": [
@@ -5057,8 +4912,8 @@
    "cause": "Unity Android Build Support 모듈 미설치",
    "fix": "Unity Hub에서 Android Build Support 모듈 설치",
    "auto": "안내만",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDKBase-Editor.dll 문자열\nhttps://creators.vrchat.com/platforms/android/build-test-mobile/",
+   "basis": "커뮤니티",
+   "source": "https://ask.vrchat.com/t/cannot-test-for-android-quest-will-not-let-me-select-both-platforms-and-when-building-for-android-i-get-an-error/46964\nhttps://creators.vrchat.com/platforms/android/build-test-mobile/",
    "result": "아니오",
    "kw": "Unable to locate Android Debug Bridge",
    "keywords": [
@@ -5067,56 +4922,7 @@
    "maCodes": [],
    "codeIsKeyword": false,
    "matchMode": "normal",
-   "note": "v2"
-  },
-  {
-   "no": 209,
-   "group": 21,
-   "groupName": "Build & Test",
-   "sev": "플레이 차단",
-   "when": "Build & Test(Android)",
-   "where": "콘솔",
-   "msg": "Your device must remain unlocked when starting a test build.\n/ Failed to test on Android device: Device is locked.",
-   "what": "기기가 잠겨 있어 테스트를 시작하지 못함",
-   "cause": "화면 잠김",
-   "fix": "기기 잠금을 풀고 연결한 채 다시 Build & Test",
-   "auto": "안내만",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDKBase-Editor.dll 문자열\nhttps://creators.vrchat.com/platforms/android/build-test-mobile/",
-   "result": "아니오",
-   "kw": "must remain unlocked when starting a test build | Device is locked",
-   "keywords": [
-    "must remain unlocked when starting a test build",
-    "Device is locked"
-   ],
-   "maCodes": [],
-   "codeIsKeyword": false,
-   "matchMode": "normal",
-   "note": "v2"
-  },
-  {
-   "no": 210,
-   "group": 21,
-   "groupName": "Build & Test",
-   "sev": "플레이 차단",
-   "when": "Build & Test(Android)",
-   "where": "콘솔",
-   "msg": "Unable to find a valid vrchat app directory on the device. Is the VRChat app installed?\n(If you've just installed the app, launch it once before trying to build and test.)",
-   "what": "기기에서 VRChat 앱 폴더를 찾지 못함",
-   "cause": "앱 미설치 또는 설치 후 한 번도 실행 안 함, 패키지 이름 불일치",
-   "fix": "VRChat 앱을 한 번 실행, 필요하면 SDK의 Android App Package Name 확인",
-   "auto": "안내만",
-   "basis": "소스 확인",
-   "source": "SDK 3.10.5 VRCSDKBase-Editor.dll 문자열\nhttps://creators.vrchat.com/platforms/android/build-test-mobile/",
-   "result": "아니오",
-   "kw": "Unable to find a valid vrchat app directory",
-   "keywords": [
-    "Unable to find a valid vrchat app directory"
-   ],
-   "maCodes": [],
-   "codeIsKeyword": false,
-   "matchMode": "normal",
-   "note": "v2"
+   "note": "v7.2 수정: 출처를 같은 문장이 보이는 공개 글로 바꿈(라이선스 정리)"
   },
   {
    "no": 211,
@@ -6408,10 +6214,6 @@
    "text": "Upload Failed"
   },
   {
-   "row": 3,
-   "text": "Only the blueprint's author can update this blueprint."
-  },
-  {
    "row": 4,
    "text": "id is not allowed to be used, Make sure you're using SDK 3.9.0 or newer."
   },
@@ -6426,10 +6228,6 @@
   {
    "row": 7,
    "text": "Avatar info does not contain an ID. Make sure to acquire an ID from the API before uploading"
-  },
-  {
-   "row": 8,
-   "text": "You must assign an ID to the avatar before building a bundle."
   },
   {
    "row": 9,
@@ -6450,10 +6248,6 @@
   {
    "row": 12,
    "text": "Before you can upload avatars or worlds to VRChat, you'll need to spend more time enjoying the app."
-  },
-  {
-   "row": 13,
-   "text": "Please use the \"VRChat SDK/Settings\" window to log in."
   },
   {
    "row": 14,
@@ -6549,15 +6343,7 @@
   },
   {
    "row": 28,
-   "text": "Exception in VRCSDKPreprocessAvatarCallback Callback"
-  },
-  {
-   "row": 28,
-   "text": "('{콜백 이름}' threw an exception.)"
-  },
-  {
-   "row": 29,
-   "text": "The VRCSDK build was aborted due to an exception in the '{콜백 이름}' VRCSDKBuildRequestedCallback. Check the log for details."
+   "text": "The VRCSDK build was aborted because the VRCSDKPreprocessAvatarCallback '{콜백 이름}' threw an exception. Check the log for details."
   },
   {
    "row": 30,
@@ -6610,10 +6396,6 @@
   {
    "row": 40,
    "text": "The SDK did not load properly. Try selecting VRChat SDK -> Reload SDK in the Unity menu bar."
-  },
-  {
-   "row": 41,
-   "text": "Can't find Avatars SDK, make sure you have it installed!"
   },
   {
    "row": 42,
@@ -7448,10 +7230,6 @@
    "text": "Couldn't add parameters, not enough memory free in the avatar's parameter asset!"
   },
   {
-   "row": 205,
-   "text": "Could not find the VRChat test avatar directory."
-  },
-  {
    "row": 206,
    "text": "Unable to test avatar: {이유}"
   },
@@ -7462,22 +7240,6 @@
   {
    "row": 208,
    "text": "Unable to locate Android Debug Bridge (adb.exe). Please be sure to install the Android SDK as a Unity module, or add adb.exe to the PATH."
-  },
-  {
-   "row": 209,
-   "text": "Your device must remain unlocked when starting a test build."
-  },
-  {
-   "row": 209,
-   "text": "Failed to test on Android device: Device is locked."
-  },
-  {
-   "row": 210,
-   "text": "Unable to find a valid vrchat app directory on the device. Is the VRChat app installed?"
-  },
-  {
-   "row": 210,
-   "text": "If you've just installed the app, launch it once before trying to build and test."
   },
   {
    "row": 211,
@@ -8106,10 +7868,6 @@
    "text": "Upload Failed"
   },
   {
-   "row": 3,
-   "text": "Only the blueprint's author can update this blueprint."
-  },
-  {
    "row": 4,
    "text": "id is not allowed to be used, Make sure you're using SDK 3.9.0 or newer."
   },
@@ -8124,10 +7882,6 @@
   {
    "row": 7,
    "text": "Avatar info does not contain an ID. Make sure to acquire an ID from the API before uploading"
-  },
-  {
-   "row": 8,
-   "text": "You must assign an ID to the avatar before building a bundle."
   },
   {
    "row": 9,
@@ -8148,10 +7902,6 @@
   {
    "row": 12,
    "text": "Before you can upload avatars or worlds to VRChat, you'll need to spend more time enjoying the app."
-  },
-  {
-   "row": 13,
-   "text": "Please use the \"VRChat SDK/Settings\" window to log in."
   },
   {
    "row": 14,
@@ -8247,15 +7997,7 @@
   },
   {
    "row": 28,
-   "text": "Exception in VRCSDKPreprocessAvatarCallback Callback"
-  },
-  {
-   "row": 28,
-   "text": "('{콜백 이름}' threw an exception.)"
-  },
-  {
-   "row": 29,
-   "text": "The VRCSDK build was aborted due to an exception in the '{콜백 이름}' VRCSDKBuildRequestedCallback. Check the log for details."
+   "text": "The VRCSDK build was aborted because the VRCSDKPreprocessAvatarCallback '{콜백 이름}' threw an exception. Check the log for details."
   },
   {
    "row": 30,
@@ -8308,10 +8050,6 @@
   {
    "row": 40,
    "text": "The SDK did not load properly. Try selecting VRChat SDK -> Reload SDK in the Unity menu bar."
-  },
-  {
-   "row": 41,
-   "text": "Can't find Avatars SDK, make sure you have it installed!"
   },
   {
    "row": 42,
@@ -9146,10 +8884,6 @@
    "text": "Couldn't add parameters, not enough memory free in the avatar's parameter asset!"
   },
   {
-   "row": 205,
-   "text": "Could not find the VRChat test avatar directory."
-  },
-  {
    "row": 206,
    "text": "Unable to test avatar: {이유}"
   },
@@ -9160,22 +8894,6 @@
   {
    "row": 208,
    "text": "Unable to locate Android Debug Bridge (adb.exe). Please be sure to install the Android SDK as a Unity module, or add adb.exe to the PATH."
-  },
-  {
-   "row": 209,
-   "text": "Your device must remain unlocked when starting a test build."
-  },
-  {
-   "row": 209,
-   "text": "Failed to test on Android device: Device is locked."
-  },
-  {
-   "row": 210,
-   "text": "Unable to find a valid vrchat app directory on the device. Is the VRChat app installed?"
-  },
-  {
-   "row": 210,
-   "text": "If you've just installed the app, launch it once before trying to build and test."
   },
   {
    "row": 211,
@@ -10068,17 +9786,6 @@
  ],
  "ignore": [
   {
-   "id": "I01",
-   "message": "Loaded data for an avatar we do not own, clearing blueprint ID\n(예전 문구: Attempted to load the data for an avatar we do not own, clearing blueprint ID)",
-   "patterns": [
-    "avatar we do not own"
-   ],
-   "tool": "VRChat SDK",
-   "kind": "경고",
-   "why": "SDK가 남의 ID를 발견해 자동으로 비웠다는 안내. 이 줄은 원인이 아니고, 진짜 원인은 대개 다른 빨간 오류나 SDK 패널 Validations에 있음",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L1962\nhttps://ask.vrchat.com/t/loaded-data-for-an-avatar-we-do-not-own-clearing-blueprint-id/48689"
-  },
-  {
    "id": "I02",
    "message": "Inhibited from running because an upload isn't actually happening",
    "patterns": [
@@ -10088,17 +9795,6 @@
    "kind": "안내",
    "why": "플레이 모드 등 실제 업로드가 아닐 때 VRCFury가 일부 처리를 건너뛴다는 안내",
    "source": "https://ask.vrchat.com/t/vrcfury-inhibited-from-running-because-an-upload-isnt-actually-happening-message/41503"
-  },
-  {
-   "id": "I03",
-   "message": "UnityPackage: Model failed validation, returning anyway: Error writing the following fields: {필드}",
-   "patterns": [
-    "Model failed validation, returning anyway"
-   ],
-   "tool": "VRChat SDK(API)",
-   "kind": "로그",
-   "why": "서버 응답의 일부 칸을 못 읽었다는 내부 로그. 업로드 실패의 원인이 아님",
-   "source": "SDK 3.10.5 VRCCore-Editor.dll 문자열\nhttps://ask.vrchat.com/t/i-am-currently-unable-to-upload-any-avatar-from-my-account/47231"
   },
   {
    "id": "I06",
@@ -10134,17 +9830,6 @@
    "source": "https://discussions.unity.com/t/parameter-doesnt-exist/149361"
   },
   {
-   "id": "I09",
-   "message": "VRCBuildPipelineCallbacks failed to load a type in assembly 'Assembly-CSharp'. If this is Assembly-CSharp it's just Unity being in the middle of loading.",
-   "patterns": [
-    "failed to load a type in assembly 'Assembly-CSharp'"
-   ],
-   "tool": "VRChat SDK",
-   "kind": "로그",
-   "why": "Unity가 로딩 중일 때 뜨는 안내(메시지에도 그렇게 적혀 있음). 다른 어셈블리 이름이면 무시하지 않음",
-   "source": "SDK 3.10.5 VRCSDKBase-Editor.dll 문자열"
-  },
-  {
    "id": "I10",
    "message": "Assembly search path does not exist",
    "patterns": [
@@ -10154,17 +9839,6 @@
    "kind": "경고",
    "why": "막 제거한 툴의 경로가 남아 있다는 안내. Unity를 다시 켜면 사라짐",
    "source": "https://vrcfury.com/troubleshooting"
-  },
-  {
-   "id": "I11",
-   "message": "Other users may choose to block this avatar due to performance. Your fallback will be shown instead.",
-   "patterns": [
-    "choose to block this avatar due to performance"
-   ],
-   "tool": "VRChat SDK",
-   "kind": "안내",
-   "why": "성능 등급 안내. 업로드는 가능",
-   "source": "SDK 3.10.5 AvatarBuilder.cs L512–536"
   },
   {
    "id": "I12",
@@ -10236,6 +9910,50 @@
    "kind": "정보",
    "why": "MA가 ‘정보’ 단계로 남기는 안내. 바인딩이 없는 Blendshape Sync는 아무 일도 하지 않을 뿐 빌드를 막지 않음. 쓸 생각이면 ‘+’로 바인딩 추가",
    "source": "https://github.com/bdunderscore/modular-avatar/blob/main/Editor/Localization/en-US.json\nhttps://github.com/bdunderscore/modular-avatar/blob/main/Editor/ErrorReporting/ComponentValidation.cs"
+  },
+  {
+   "id": "I01",
+   "message": "Loaded data for an avatar we do not own, clearing blueprint ID\n(예전 문구: Attempted to load the data for an avatar we do not own, clearing blueprint ID)",
+   "patterns": [
+    "avatar we do not own"
+   ],
+   "tool": "VRChat SDK",
+   "kind": "경고",
+   "why": "SDK가 남의 ID를 발견해 자동으로 비웠다는 안내. 이 줄은 원인이 아니고, 진짜 원인은 대개 다른 빨간 오류나 SDK 패널 Validations에 있음",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L1962\nhttps://ask.vrchat.com/t/loaded-data-for-an-avatar-we-do-not-own-clearing-blueprint-id/48689"
+  },
+  {
+   "id": "I03",
+   "message": "UnityPackage: Model failed validation, returning anyway: Error writing the following fields: {필드}",
+   "patterns": [
+    "Model failed validation, returning anyway"
+   ],
+   "tool": "VRChat SDK(API)",
+   "kind": "로그",
+   "why": "서버 응답의 일부 칸을 못 읽었다는 내부 로그. 업로드 실패의 원인이 아님",
+   "source": "https://ask.vrchat.com/t/i-am-currently-unable-to-upload-any-avatar-from-my-account/47231"
+  },
+  {
+   "id": "I09",
+   "message": "VRCBuildPipelineCallbacks failed to load a type in assembly 'Assembly-CSharp'. If this is Assembly-CSharp it's just Unity being in the middle of loading.",
+   "patterns": [
+    "failed to load a type in assembly 'Assembly-CSharp'"
+   ],
+   "tool": "VRChat SDK",
+   "kind": "로그",
+   "why": "Unity가 로딩 중일 때 뜨는 안내(메시지에도 그렇게 적혀 있음). 다른 어셈블리 이름이면 무시하지 않음",
+   "source": "https://ask.vrchat.com/t/vrc-sdk-can-not-be-loaded-because-of-unity-mathematics/15701"
+  },
+  {
+   "id": "I11",
+   "message": "Other users may choose to block this avatar due to performance. Your fallback will be shown instead.",
+   "patterns": [
+    "choose to block this avatar due to performance"
+   ],
+   "tool": "VRChat SDK",
+   "kind": "안내",
+   "why": "성능 등급 안내. 업로드는 가능",
+   "source": "SDK 3.10.5 avatars VRCSdkControlPanelAvatarBuilder.cs L512–536"
   }
  ],
  "tools": [
@@ -10486,11 +10204,11 @@
  "rules": [
   {
    "id": "P1",
-   "when": "빌드 중단 메시지(27·28·29번)",
+   "when": "빌드 중단 메시지(27·28번)",
    "where": "작은따옴표 안의 콜백 이름",
    "judge": "콜백 표의 툴",
    "guide": "카드 제목에 그 툴 이름을 넣고, 바로 앞에 난 그 툴의 오류를 원인으로 묶음. 앞선 오류가 없으면 ‘<툴>을 VCC에서 최신으로’",
-   "example": "R016 LockMaterialsOnUpload"
+   "example": "R016 LockMaterialsOnUpload · v7.2: 29번(공개 출처 없음)을 목록에서 뺌"
   },
   {
    "id": "P2",
@@ -10815,30 +10533,6 @@
  "choices": [
   {
    "row": 1,
-   "question": "어떻게 올릴 건가요",
-   "hint": "구매하거나 받은 아바타라면 보통 ‘새 아바타로 올리기’예요.",
-   "options": [
-    {
-     "label": "새 아바타로 올리기",
-     "steps": [
-      "아바타 루트의 Pipeline Manager를 선택해요. {select}",
-      "인스펙터에서 ‘Detach (Optional)’ 버튼을 눌러 ID를 비워요.",
-      "SDK 창에서 다시 Build & Publish를 눌러요. 새 ID는 업로드할 때 자동으로 받아요. {sdk}"
-     ],
-     "note": "Detach하면 업로드할 때 새 아바타로 등록돼요. 원래 ID의 아바타는 바뀌지 않아요."
-    },
-    {
-     "label": "내가 올린 아바타 덮어쓰기",
-     "steps": [
-      "SDK 창에서 로그아웃하고, 그 아바타를 올렸던 계정으로 다시 로그인해요. {sdk}",
-      "다시 Build & Publish를 눌러요."
-     ],
-     "note": "다른 사람이 올린 아바타는 덮어쓸 수 없어요. 구매한 아바타라면 ‘새 아바타로 올리기’를 골라요."
-    }
-   ]
-  },
-  {
-   "row": 3,
    "question": "어떻게 올릴 건가요",
    "hint": "구매하거나 받은 아바타라면 보통 ‘새 아바타로 올리기’예요.",
    "options": [

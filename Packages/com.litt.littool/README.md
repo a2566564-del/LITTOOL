@@ -1,4 +1,4 @@
-# LITTOOL v1.3.3
+# LITTOOL v1.3.4
 
 [한국어](#한국어) · [English](#english) · [日本語](#日本語)
 
@@ -27,7 +27,7 @@ VCC로 설치하면 새 버전이 나왔을 때 VCC에서 바로 올릴 수 있�
 2. 프로젝트의 **Manage Project**에서 LITTOOL 오른쪽의 **+**를 누릅니다. 예전에 unitypackage로 넣은 `Assets/LITTOOL` 폴더는 이때 자동으로 지워지고, 설정은 그대로 남습니다.
 3. 새 버전이 나오면 **Manage Project**에서 LITTOOL의 **Latest Version** 버튼을 누릅니다. 저절로 바뀌지는 않습니다.
 
-unitypackage로 설치하려면 `LITTOOL_v1.3.3.unitypackage`(https://github.com/a2566564-del/LITTOOL/releases)를 Unity 창에 드래그하고 **Import**를 누릅니다.
+unitypackage로 설치하려면 `LITTOOL_v1.3.4.unitypackage`(https://github.com/a2566564-del/LITTOOL/releases)를 Unity 창에 드래그하고 **Import**를 누릅니다.
 이전 버전 위에 그대로 덮어 설치하면 됩니다. 이 방법은 새 버전 알림이 없습니다.
 
 두 방법을 섞지 마세요. VCC로 넣은 프로젝트에 unitypackage를 다시 임포트하면 같은 코드가 두 벌이 되어 컴파일 오류가 납니다.
@@ -107,7 +107,7 @@ LITTOOL은 아바타나 설정을 직접 바꾸지 않습니다. 버튼은 위�
 4. **다시 검사**는 지금 확인할 수 있는 것(컴파일 오류, SDK 창의 검사 목록, 작업 중에 난 오류)을 다시 읽습니다. 플레이·업로드 중에만 나는 오류는 다시 플레이하거나 업로드해서 확인하세요.
 
 - 안내 문장은 한국어만 있습니다. 탭의 버튼과 제목은 한국어·English·日本語입니다.
-- 오류 목록(262개, v7.1, 2026년 10월 기준)은 패키지 안에 들어 있고 인터넷에서 받지 않습니다. 목록은 LITTOOL을 업데이트할 때 바뀝니다.
+- 오류 목록(254개, v7.2, 2026년 10월 기준)은 패키지 안에 들어 있고 인터넷에서 받지 않습니다. 목록은 LITTOOL을 업데이트할 때 바뀝니다.
 - **메시지 내용**의 **파파고로 번역**·**구글 번역**은 누를 때만 그 메시지를 번역 사이트로 보내 브라우저에서 엽니다. 이름·경로·VRChat ID는 오류 기록과 같은 방식으로 가리고 보냅니다. 인터넷에 연결되어 있지 않으면 버튼이 꺼집니다.
 - 목록과 똑같지 않은 오류는 이 PC의 `문서\LITTOOL\오류 기록\YYYY-MM.txt`에 남깁니다(목록과 맞은 오류는 횟수만 셉니다). 사용자 이름·PC 이름·아바타 이름·VRChat ID·이메일·프로젝트 폴더는 가려서 적고, 어디로도 보내지 않습니다. 탭의 **기록 폴더 열기**로 열 수 있습니다.
 - **자동으로 모으기**를 끄면 아무것도 듣지 않고, **다시 검사**를 누를 때 콘솔·NDMF·SDK 검사 목록·컴파일 상태를 한꺼번에 읽습니다. 이때는 Unity 콘솔에 보이는 항목만 읽으므로, 콘솔에서 오류 표시를 꺼 두었거나 검색어를 넣어 두면 그 오류를 읽지 못합니다.
@@ -143,7 +143,7 @@ With the VCC you can update LITTOOL from the VCC when a new version comes out.
 2. In your project's **Manage Project**, press **+** to the right of LITTOOL. An old `Assets/LITTOOL` folder from the unitypackage is removed at that point; your settings stay.
 3. For a new version, press LITTOOL's **Latest Version** button in **Manage Project**. It does not update by itself.
 
-To use the unitypackage instead, drag `LITTOOL_v1.3.3.unitypackage` (https://github.com/a2566564-del/LITTOOL/releases) into Unity and click **Import**.
+To use the unitypackage instead, drag `LITTOOL_v1.3.4.unitypackage` (https://github.com/a2566564-del/LITTOOL/releases) into Unity and click **Import**.
 Import it over an older version. This way gives no notice of new versions.
 
 Do not mix the two: importing the unitypackage into a project that has LITTOOL from the VCC makes two copies of the same code, which fails to compile.
@@ -223,7 +223,7 @@ LITTOOL never changes your avatar or settings. Its buttons only show where somet
 4. **Check again** reads what can be checked now (compile errors, the SDK window's Validations, errors raised while editing). Errors that only happen in Play Mode or during an upload are confirmed by playing or uploading again.
 
 - The guidance itself is in Korean only. The tab's buttons and titles are in Korean, English and Japanese.
-- The error list (262 entries, v7.1, October 2026) is inside the package and is never downloaded; it changes when LITTOOL is updated.
+- The error list (254 entries, v7.2, October 2026) is inside the package and is never downloaded; it changes when LITTOOL is updated.
 - **Translate (Papago)** / **Google Translate** under **What the message says** send that message to the translation site and open it in your browser, only when pressed. Names, paths and VRChat IDs are masked the same way as in the error log. The buttons are disabled without an internet connection.
 - Errors that do not exactly match the list are written on this PC to `Documents\LITTOOL\오류 기록\YYYY-MM.txt` (matched errors only raise a count). User and PC names, avatar names, VRChat IDs, e-mail addresses and the project folder are masked, and nothing is sent anywhere. **Open log folder** in the tab opens it.
 - With **Collect automatically** off nothing is heard; **Check again** reads the console, NDMF, the SDK Validations and the compile state at once. It reads only what the Unity Console shows, so errors hidden by the Console's filters or search text are missed.
@@ -259,7 +259,7 @@ VCCでインストールすると、新しいバージョンが出たときにVC
 2. プロジェクトの **Manage Project** で、LITTOOLの右の **+** を押します。以前unitypackageで入れた `Assets/LITTOOL` フォルダーはこのとき自動で削除され、設定はそのまま残ります。
 3. 新しいバージョンが出たら、**Manage Project** でLITTOOLの **Latest Version** ボタンを押します。自動では更新されません。
 
-unitypackageでインストールする場合は、`LITTOOL_v1.3.3.unitypackage`(https://github.com/a2566564-del/LITTOOL/releases)をUnityにドラッグし、**Import** を押します。
+unitypackageでインストールする場合は、`LITTOOL_v1.3.4.unitypackage`(https://github.com/a2566564-del/LITTOOL/releases)をUnityにドラッグし、**Import** を押します。
 旧バージョンの上にそのまま上書きできます。この方法では新しいバージョンのお知らせはありません。
 
 2つの方法を混ぜないでください。VCCで入れたプロジェクトにunitypackageをもう一度インポートすると同じコードが2つになり、コンパイルエラーになります。
@@ -339,7 +339,7 @@ LITTOOLはアバターや設定を直接変えません。ボタンは場所を�
 4. **再チェック** は今確認できるもの(コンパイルエラー、SDKウィンドウのValidations、作業中に出たエラー)を読み直します。プレイ中・アップロード中だけに出るエラーは、もう一度プレイかアップロードして確認してください。
 
 - 案内文は韓国語のみです。タブのボタンとタイトルは韓国語・English・日本語です。
-- エラーリスト(262個、v7.1、2026年10月時点)はパッケージに含まれ、インターネットからは取得しません。リストはLITTOOLの更新で変わります。
+- エラーリスト(254個、v7.2、2026年10月時点)はパッケージに含まれ、インターネットからは取得しません。リストはLITTOOLの更新で変わります。
 - **メッセージの内容** の **Papagoで翻訳**・**Google翻訳** は、押したときだけそのメッセージを翻訳サイトに送り、ブラウザで開きます。名前・パス・VRChat IDはエラー記録と同じ方法で伏せて送ります。インターネットに接続されていないとボタンは押せません。
 - リストと完全に一致しないエラーは、このPCの `ドキュメント\LITTOOL\오류 기록\YYYY-MM.txt` に残します(一致したエラーは回数だけ数えます)。ユーザー名・PC名・アバター名・VRChat ID・メールアドレス・プロジェクトフォルダーは伏せて書き、どこにも送りません。タブの **記録フォルダーを開く** で開けます。
 - **自動で集める** をオフにすると何も聞かず、**再チェック** を押したときにコンソール・NDMF・SDKのValidations・コンパイル状態をまとめて読みます。このときはUnityのコンソールに表示されている項目だけを読むため、コンソールでエラー表示をオフにしていたり検索語を入れていたりすると、そのエラーは読めません。
@@ -356,5 +356,5 @@ LITTOOLはアバターや設定を直接変えません。ボタンは場所を�
 - LITTOOL: 제작자가 알려 준 사람의 개인 사용만 허락합니다. 다시 배포하거나 다른 곳에 올리지 마세요 / Personal use only, for the people the author shares it with; do not redistribute or re-upload it (see `LICENSE.txt`). 변경 기록은 `CHANGELOG.md`.
 - Bone Scale works with Modular Avatar by bd_ (MIT License) through reflection only; no Modular Avatar code is included.
 - lilToon section and preset category names are taken from lilToon's translation files — lilToon by lilxyzw, MIT License.
-- Error Finder's error list quotes the error messages of the VRChat SDK and of avatar tools (Modular Avatar, NDMF, Avatar Optimizer, VRCFury, VRCQuestTools, lilycalInventory, TexTransTool, lilToon, FaceEmo and others) so that it can recognize them; each entry names where its text and fix come from. LITTOOL reads the VRChat SDK and NDMF through reflection only; none of their code is included.
+- Error Finder's error list quotes the error messages of the VRChat SDK and of avatar tools (Modular Avatar, NDMF, Avatar Optimizer, VRCFury, VRCQuestTools, lilycalInventory, TexTransTool, lilToon, FaceEmo and others) so that it can recognize them; each entry names where its text and fix come from. The quoted messages belong to their owners; see "Third-party notices" in `LICENSE.txt`. LITTOOL reads the VRChat SDK and NDMF through reflection only; none of their code is included.
 - The title image uses the fonts Yellowtail (Apache License 2.0) and Source Sans 3 (SIL Open Font License 1.1).

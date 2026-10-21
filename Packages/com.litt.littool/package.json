@@ -1,7 +1,7 @@
 {
   "name": "com.litt.littool",
   "displayName": "LITTOOL",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "unity": "2022.3",
   "description": "VRChat 아바타 제작 도구: 마테리얼 일괄 적용, 본 스케일, 오류 찾기 / Material Batch, Bone Scale and Error Finder for VRChat avatars",
   "author": {
@@ -9,7 +9,7 @@
     "email": "342915747+a2566564-del@users.noreply.github.com",
     "url": "https://github.com/a2566564-del/LITTOOL"
   },
-  "url": "https://github.com/a2566564-del/LITTOOL/releases/download/1.3.3/com.litt.littool-1.3.3.zip",
+  "url": "https://github.com/a2566564-del/LITTOOL/releases/download/1.3.4/com.litt.littool-1.3.4.zip",
   "license": "SEE LICENSE IN LICENSE.txt",
   "legacyFolders": {
     "Assets\\LITTOOL": "38da058472f758f492a7fec363e5556b"

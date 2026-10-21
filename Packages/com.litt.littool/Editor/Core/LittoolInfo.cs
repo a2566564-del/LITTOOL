@@ -4,7 +4,7 @@ namespace Littool
     internal static class LittoolInfo
     {
         public const string Name = "LITTOOL";
-        public const string Version = "1.3.3";
+        public const string Version = "1.3.4";
         public const string MenuPath = "Tools/LITTOOL";
 
         /// <summary>GUID of Editor/Images/LITTOOL_Banner.png. Kept stable across versions.</summary>

@@ -89,6 +89,8 @@ namespace Littool.ErrorFinder
         readonly Dictionary<string, List<int>> m_CodeRows = new Dictionary<string, List<int>>(StringComparer.Ordinal);
         readonly HashSet<int> m_MaRows = new HashSet<int>();
         readonly HashSet<int> m_Wrappers = new HashSet<int>();
+        // row number -> position in data.rows (the list keeps the numbers of rows it took out, so they can differ)
+        readonly Dictionary<int, int> m_PosOfNo = new Dictionary<int, int>();
         readonly Dictionary<string, int[]> m_ToolGroups = new Dictionary<string, int[]>(StringComparer.Ordinal);
         readonly Dictionary<string, string> m_AssetFolders = new Dictionary<string, string>(StringComparer.Ordinal);
         readonly List<TemplateDoc> m_Templates = new List<TemplateDoc>();
@@ -109,6 +111,7 @@ namespace Littool.ErrorFinder
             for (int i = 0; i < rows.Length; i++)
             {
                 var r = rows[i];
+                m_PosOfNo[r.no] = i;
                 foreach (var alt in r.keywords ?? new string[0])
                     m_Keywords.Add(new Keyword { Length = alt.Length, Pattern = ErrorText.KeywordPattern(alt), Row = i });
                 foreach (var code in r.maCodes ?? new string[0])
@@ -134,7 +137,9 @@ namespace Littool.ErrorFinder
             foreach (var doc in data.docs ?? new CatalogDoc[0])
             {
                 string d = ErrorText.Normalize(doc.text);
-                var t = new TemplateDoc { Row = doc.row - 1, Length = d.Length };
+                int pos = PosOf(doc.row);
+                if (pos < 0) continue;
+                var t = new TemplateDoc { Row = pos, Length = d.Length };
                 string core = d.Replace("<v>", "").Trim();
                 if (ErrorText.WeightedLength(core, data.cjkWeight) >= 12)
                 {
@@ -155,7 +160,7 @@ namespace Littool.ErrorFinder
             for (int k = 0; k < index.Length; k++)
             {
                 texts.Add(ErrorText.Normalize(index[k].text));
-                m_IndexRows[k] = index[k].row - 1;
+                m_IndexRows[k] = PosOf(index[k].row);
             }
             m_Index = new ErrorTfidf(texts);
         }
@@ -176,7 +181,10 @@ namespace Littool.ErrorFinder
             }
         }
 
-        public CatalogRow Row(int no) => no >= 1 && no <= m_Data.rows.Length ? m_Data.rows[no - 1] : null;
+        public CatalogRow Row(int no) => m_PosOfNo.TryGetValue(no, out int i) ? m_Data.rows[i] : null;
+
+        /// <summary>Position of a row number in data.rows, or -1 when the list has no such row.</summary>
+        int PosOf(int no) => m_PosOfNo.TryGetValue(no, out int i) ? i : -1;
 
         // ---------------------------------------------------------------- steps
         int KeywordMatch(string text)
@@ -232,7 +240,7 @@ namespace Littool.ErrorFinder
             for (int k = 0; k < sims.Length; k++)
             {
                 int i = m_IndexRows[k];
-                if (m_MaRows.Contains(i) || Excluded.Contains(i)) continue;  // never by the look of another MA code's sentence
+                if (i < 0 || m_MaRows.Contains(i) || Excluded.Contains(i)) continue;  // never by the look of another MA code's sentence
                 if (allowed != null && Array.IndexOf(allowed, m_Data.rows[i].group) < 0) continue;
                 if (best.TryGetValue(i, out double old))
                 {
@@ -388,7 +396,7 @@ namespace Littool.ErrorFinder
             if (lp.Success && lp.Groups[1].Value.Length >= 200)
             {
                 hit.Id = "P10";
-                hit.Row = LongPathRowNo - 1;
+                hit.Row = PosOf(LongPathRowNo);
                 return true;
             }
 
@@ -681,14 +689,14 @@ namespace Littool.ErrorFinder
             }
 
             // a wrapping sentence: if the sentence inside it is in the list, show that card
-            if (res.Kind == MatchKind.Entry && m_Wrappers.Contains(res.No - 1) && depth < 2)
+            if (res.Kind == MatchKind.Entry && m_Wrappers.Contains(PosOf(res.No)) && depth < 2)
             {
-                foreach (var inner in InnerTexts(text, res.No - 1))
+                foreach (var inner in InnerTexts(text, PosOf(res.No)))
                 {
                     if (string.IsNullOrEmpty(inner.Key)) continue;
                     var r2 = Analyze(inner.Key, depth + 1);
                     bool listed = r2.Kind == MatchKind.Entry && !(r2.How ?? "").StartsWith("비슷", StringComparison.Ordinal);
-                    if (listed && !inner.Value && m_Wrappers.Contains(r2.No - 1)) continue;  // the text before is the outer wrapper
+                    if (listed && !inner.Value && m_Wrappers.Contains(PosOf(r2.No))) continue;  // the text before is the outer wrapper
                     if (listed || r2.Rule == "P14")
                     {
                         r2.Wrapped = res.No;
