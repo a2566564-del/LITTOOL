@@ -1,6 +1,6 @@
 # LITTOOL
 
-VRChat 아바타 제작을 돕는 Unity 에디터 툴입니다(마테리얼 일괄 적용 · 본 스케일 · 오류 찾기).
+VRChat 아바타 제작을 돕는 Unity 에디터 툴입니다.
 사용법은 [패키지 README](Packages/com.litt.littool/README.md), 변경 기록은 [CHANGELOG](Packages/com.litt.littool/CHANGELOG.md)에 있습니다.
 
 - **VCC로 설치**: https://a2566564-del.github.io/LITTOOL/ 에서 **Add to VCC** → 프로젝트의 **Manage Project**에서 LITTOOL **+**.
@@ -8,7 +8,7 @@ VRChat 아바타 제작을 돕는 Unity 에디터 툴입니다(마테리얼 일�
 - **unitypackage**: [Releases](https://github.com/a2566564-del/LITTOOL/releases)의 `LITTOOL_v<버전>.unitypackage`.
 
 **라이선스**: 소스는 공개되어 있지만 오픈소스가 아닙니다. 제작자가 알려 준 사람의 개인 사용만 허락하며,
-다시 배포·판매·다른 곳에 올리기·고친 것 배포는 할 수 없습니다 — [LICENSE.txt](Packages/com.litt.littool/LICENSE.txt).
+다시 배포·판매·다른 곳에 업로드,수정 배포는 할 수 없습니다 — [LICENSE.txt](Packages/com.litt.littool/LICENSE.txt).
 
 ## 구성
 - `Packages/com.litt.littool/` — 패키지 본체(VCC 패키지). 코드, 사용 설명, 변경 기록, 라이선스.
